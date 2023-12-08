@@ -1,4 +1,4 @@
-FROM ubuntu:22.04.3
+FROM ubuntu:22.04
 
 RUN apt -y update
 RUN apt install -y nginx
@@ -9,4 +9,4 @@ COPY index.html /var/www/html
 EXPOSE 80
 
 
-CMD ["-g", "daemon off;", "nginx"]
+CMD ["nginx", "-g", "daemon off;"]
