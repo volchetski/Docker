@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./index.html:/usr/share/nginx/html/index.html
+    restart: always
